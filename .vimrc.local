@@ -1,0 +1,58 @@
+set background=dark
+colorscheme solarized
+
+" The Silver Searcher
+if executable('ag')
+  " Use ag over grep
+  set grepprg=ag\ --nogroup\ --nocolor
+
+  " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
+  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+
+  " ag is fast enough that CtrlP doesn't need to cache
+  let g:ctrlp_use_caching = 0
+endif
+
+" bind K to grep word under cursor
+nnoremap K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
+
+" indentation and tabs to two spaces:
+filetype plugin indent on
+" tabs displayed as two spaces
+set tabstop=2
+" > inserts two spaces
+set shiftwidth=2
+" two spaces on tab press instead of tab
+set expandtab
+" indent correctly
+set softtabstop=2
+
+" command to close buffer without closing split
+command Bd bp\|bd \#
+
+"angular plugin
+Plugin 'burnettk/vim-angular'
+
+" airline tab line
+let g:airline#extensions#tabline#enabled = 1
+
+" windowswap plugin
+Plugin 'wesQ3/vim-windowswap'
+
+set timeout " Do time out on mappings and others
+set timeoutlen=2000 " Wait {num} ms before timing out a mapping
+
+" When you’re pressing Escape to leave insert mode in the terminal, it will by
+" default take a second or another keystroke to leave insert mode completely
+" and update the statusline. This fixes that. I got this from:
+" https://powerline.readthedocs.org/en/latest/tipstricks.html#vim
+if !has('gui_running')
+    set ttimeoutlen=10
+    augroup FastEscape
+        autocmd!
+        au InsertEnter * set timeoutlen=0
+        au InsertLeave * set timeoutlen=1000
+    augroup END
+endif
+
+nmap <F1> <nop>
