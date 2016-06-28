@@ -89,3 +89,5 @@ eval "$(hub alias -s)"
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 
 alias gn=git-number
+
+. $HOME/.shellrc.load
