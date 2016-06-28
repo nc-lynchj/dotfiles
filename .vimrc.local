@@ -27,9 +27,6 @@ set expandtab
 " indent correctly
 set softtabstop=2
 
-" command to close buffer without closing split
-command Bd bp\|bd \#
-
 "angular plugin
 Plugin 'burnettk/vim-angular'
 
@@ -56,3 +53,15 @@ if !has('gui_running')
 endif
 
 nmap <F1> <nop>
+
+set colorcolumn=100
+set tw=100
+
+let g:ag_working_path_mode="r"
+
+set foldmethod=syntax
+
+
+Plugin 'rking/ag.vim'
+
+Plugin 'qpkorr/vim-bufkill'
