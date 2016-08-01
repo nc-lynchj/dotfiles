@@ -68,3 +68,6 @@ Plugin 'qpkorr/vim-bufkill'
 
 :nmap <F1> :echo<CR>
 :imap <F1> <C-o>:echo<CR>
+
+" jsx highlighting
+Plugin 'mxw/vim-jsx'
