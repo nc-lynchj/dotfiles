@@ -89,5 +89,9 @@ eval "$(hub alias -s)"
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 
 alias gn=git-number
+alias grunit='grunt unit'
+alias grest='grunt test'
+alias grint='grunt jshint'
+alias grean='grunt clean'
 
 . $HOME/.shellrc.load
