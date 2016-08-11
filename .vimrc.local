@@ -73,3 +73,7 @@ Plugin 'mxw/vim-jsx'
 let g:jsx_ext_required = 0
 
 Plugin 'wikitopian/hardmode'
+
+set scrolloff=8         "Start scrolling when we're 8 lines away from margins
+set sidescrolloff=15
+set sidescroll=1
